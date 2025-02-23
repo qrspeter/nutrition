@@ -2,7 +2,7 @@
 # mingw32-make -f Makefile
 
 # flags =  -Wall -fexceptions -g 
-flags =  -Wall -fexceptions -02
+flags =  -Wall -fexceptions -O2
 
 CC = g++
 

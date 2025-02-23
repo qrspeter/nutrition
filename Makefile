@@ -1,11 +1,11 @@
 # flags =  -Wall -fexceptions -g 
-flags =  -Wall -fexceptions -02
+flags =  -Wall -fexceptions -O2
 
 CC = g++
 
 all: main
 main: main.o nutrition.o
-	${CC} -o main main.o nutrition.o
+	${CC} main.o nutrition.o -o main 
 main.o: main.cpp nutrition.h
 	${CC} $(flags) -c main.cpp
 nutrition.o: nutrition.cpp nutrition.h

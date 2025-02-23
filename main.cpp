@@ -1,12 +1,3 @@
-/* to do:
- * - sort files
- * -print all data into text (like a pandas) with filenames (in load_files)
- * - check output to find problems with averaged data - the one is overvaluated...
- * - error is somewhere in summ of data from files, averaging is correct and even tested...
- * - so check transform and std::plus<float>()... clean the temp array....
- */
-
-
 #include <iostream>
 #include <vector>
 #include <cassert>
@@ -35,15 +26,5 @@ int main(int argc, char* argv[])
         Nutr.print_macronutrients(aver7);
     }
     Nutr.save2pdd(total_data, path + pdd_filemane);
-/*
-    std::vector<macronutrients> first_week(total_data.begin(), total_data.begin() + 7);
-    aver7 = averaged(first_week);
-    print_macronutrients(aver7);    
-    std::vector<macronutrients> first_day(total_data.begin(), total_data.begin() + 1);
-    aver7 = averaged(first_day);
-    print_macronutrients(aver7); 
-    std::vector<macronutrients> last_day(total_data.end() - 1 , total_data.end());
-    aver7 = averaged(last_day);
-    print_macronutrients(aver7); 
-*/
+
 }
