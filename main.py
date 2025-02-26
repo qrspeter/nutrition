@@ -100,7 +100,8 @@ if __name__ == "__main__":
 
     
     mean = df.mean().apply(lambda x: int(x))
-    print('Averaged:\n', mean)
+    print('Averaged:')
+    print(mean)
     df_filename = 'nutrition_pd'
     df.to_pickle(path + df_filename + '.pkl')
     df.to_csv(path + df_filename + '.txt')
@@ -109,7 +110,8 @@ if __name__ == "__main__":
         days_average = 7
         mean_week = df[-days_average:].mean().apply(lambda x: int(x))
         mean_week.to_csv(path + df_filename + '.txt', mode='a')
-        print(f'{days_average} days averaged:\n', mean_week)
+        print(f'{days_average} days averaged:')
+        print(mean_week)
     #mean.to_csv(path + df_filename + '.txt', mode='a')
 
 '''
