@@ -32,3 +32,4 @@
 *.app
 
 *.bak
+./__pycache__/
