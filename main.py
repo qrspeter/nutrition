@@ -31,11 +31,6 @@ def load_files(path) -> dict:
         if name[-1] == 'csv' and name[0].startswith('2025'):
             data[name[0]] = load_file(path + filename)
             
-    # data = []
-    # for name in filelist:
-        # if name.split('.')[1] == 'csv':
-            # data.append(load_file(name))
-            
     return data
 
 def averaged(data: dict) -> list:
@@ -59,8 +54,7 @@ def check_daily(daily: list) -> bool:
             check = False
     return check
     
-assert check_daily([2500, 100, 80, 400]), "Daily check error"
-assert check_daily([100, 100, 800, 40]) == False, "Daily check error"
+
 
 '''
 def print_data(data: dict) -> None:
@@ -89,11 +83,6 @@ if __name__ == "__main__":
     macronutrients = ['Energy', 'Protein', 'Fat', 'Carbs']
     data = load_files(path)
     #pprint.pprint(data)
-    #print_data(data)
-    #aver = averaged(data)
-    #print(aver)
-    #print_data({'Avraged is': aver})
-    
     
     df = pd.DataFrame.from_dict(data, orient='index', columns=macronutrients)
     print(df)
@@ -114,9 +103,3 @@ if __name__ == "__main__":
         print(mean_week)
     #mean.to_csv(path + df_filename + '.txt', mode='a')
 
-'''
-replacement lists to pandas:
-df = pd.DataFrame(columns=macronutrients)
-for n,filename in enumerate(filelist):
-    df.loc[n] = [filename] + load_file(path + filename)
-'''
